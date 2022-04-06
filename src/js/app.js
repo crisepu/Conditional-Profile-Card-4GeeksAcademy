@@ -48,22 +48,14 @@ function render(variables = {}) {
   let city = variables.city == null ? "Your City" : variables.city;
   let country = variables.country == null ? "Your Country" : variables.country;
 
-  let linkTwitter =
-    variables.twitter == null
-      ? "https://twitter.com/4geeksacademy"
-      : variables.twitter;
-  let linkGithub =
-    variables.github == null
-      ? "https://github.com/4geeksacademy"
-      : variables.github;
-  let linkLinkedin =
-    variables.linkedin == null
-      ? "https://linkedin.com/4geeksacademy"
-      : variables.linkedin;
-  let linkInstagram =
-    variables.instagram == null
-      ? "https://instagram.com/4geeksacademy"
-      : variables.instagram;
+  let userTwitter =
+    variables.twitter == null ? "4geeksacademy" : variables.twitter;
+  let userGithub =
+    variables.github == null ? "4geeksacademy" : variables.github;
+  let userLinkedin =
+    variables.linkedin == null ? "4geeksacademy" : variables.linkedin;
+  let userInstagram =
+    variables.instagram == null ? "4geeksacademy" : variables.instagram;
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
@@ -73,10 +65,10 @@ function render(variables = {}) {
           <h2>${role}</h2>
           <h3>${city}, ${country}</h3>
           <ul class="${position}">
-            <li><a href="${linkTwitter}"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="${linkGithub}"><i class="fab fa-github"></i></a></li>
-            <li><a href="${linkLinkedin}"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="${linkInstagram}"><i class="fab fa-instagram"></i></a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://twitter.com/${userTwitter}"><i class="fab fa-twitter"></i></a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/${userGithub}"><i class="fab fa-github"></i></a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/${userLinkedin}"><i class="fab fa-linkedin"></i></a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://instagram.com/${userInstagram}"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
